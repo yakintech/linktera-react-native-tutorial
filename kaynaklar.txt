@@ -1,3 +1,9 @@
 Key Prop 
 https://stackoverflow.com/questions/28329382/understanding-unique-keys-for-array-children-in-react-js/43892905#43892905
 
+Performans İpuçları
+https://medium.com/batech/react-native-performans-i%CC%87pu%C3%A7lar%C4%B1-1-4c3c8f784fb6
+
+Flex Yapısı
+https://reactnative.dev/docs/flexbox
+https://www.youtube.com/watch?v=OaEtW_CSaPk

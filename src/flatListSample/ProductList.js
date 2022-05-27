@@ -1,25 +1,45 @@
-import { View, Text, FlatList } from 'react-native'
-import React from 'react'
+import { View, Text, FlatList, TouchableOpacity, ActivityIndicator, Button } from 'react-native'
+import React, {useState} from 'react'
 import { productsData } from '../data/productsData'
+
 
 const ProductList = () => {
 
-    
-  const renderItem = ({item}) => {
-      return <Text style={{fontSize:40, fontWeight:'bold'}}>{item.name}</Text>
+  const [products, setproducts] = useState([]);
+  const [loading, setloading] = useState(true)
+  
+
+  const renderItem = ({ item }) => {
+    return <Text style={{ fontSize: 20, fontWeight: 'bold' }}>{item.name}</Text>
   }
 
-  return (
+  return (<>
     <View>
-        <FlatList
-          data={productsData}
-          renderItem={renderItem}
-          keyExtractor={item => item.id}
-          onScrollEndDrag={(e) => console.log("END",e)}
-        >
+      <Button title='Close' onPress={() => setloading(false)}></Button>
 
-        </FlatList>
+
+      <ActivityIndicator size='large' animating={loading}>
+      </ActivityIndicator>
+      
+      <FlatList
+        data={productsData}
+        renderItem={renderItem}
+        keyExtractor={item => item.id}
+        onScrollEndDrag={(e) => console.log("END", e)}
+      >
+
+      </FlatList>
+  
+
+
+      {/* <TouchableOpacity onPress={() => alert("Hello Çağatay-Ayşe")}>
+        <Text>Çağatay</Text>
+        <Text>Ayşe</Text>
+      </TouchableOpacity> */}
+    
     </View>
+  </>
+
   )
 }
 
