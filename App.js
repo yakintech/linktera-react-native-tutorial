@@ -1,22 +1,19 @@
 
 //class base component, function base component
 
-import { View, Text, SafeAreaView } from 'react-native'
+import {SafeAreaView } from 'react-native'
 import React from 'react'
-import JsxEventSample from './src/jsxSample/JsxEventSample'
-import CounterSample from './src/stateSample/CounterSample'
+import PropSample from './src/stateSample/PropSample'
+import ProductBox from './src/stateSample/ProductBox'
+import TodoScreen from './src/stateSample/TodoScreen'
 import ArrayStateSample from './src/stateSample/ArrayStateSample'
+import ProductList from './src/flatListSample/ProductList'
 
 const App = () => {
-
+  
   return (<>
     <SafeAreaView>
-      <ArrayStateSample></ArrayStateSample>
-      {/* <CounterSample></CounterSample> */}
-      {/* <JsxEventSample></JsxEventSample> */}
-      {/* <OneWayBinding></OneWayBinding> */}
-      {/* <Header></Header>
-      <Text>Hello React Native</Text> */}
+     <ProductList></ProductList>
     </SafeAreaView>
   
   </>

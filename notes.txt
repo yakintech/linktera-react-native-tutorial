@@ -1,1 +1,2 @@
 * apk çıkartma
+* bigdata list sample

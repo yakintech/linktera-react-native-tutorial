@@ -1,9 +1,9 @@
-import { View, Text, Button, TextInput } from 'react-native'
+import { View, Text, Button, TextInput, ScrollView } from 'react-native'
 import React, { useState, Fragment } from 'react'
 
 const ArrayStateSample = () => {
 
-    let countryList = ['Turkey', 'Germany', 'Iran', 'Russia', 'France'];
+    let countryList = ['Turkey', 'Germany', 'Iran', 'Russia', 'France','Turkey', 'Germany', 'Iran', 'Russia', 'France','Turkey', 'Germany', 'Iran', 'Russia', 'France','Turkey', 'Germany', 'Iran', 'Russia', 'France'];
     const [countries, setCountries] = useState(countryList);
     const [countryName, setCountryName] = useState('')
 
@@ -18,10 +18,12 @@ const ArrayStateSample = () => {
     const addNew = () => {
 
         setCountries([...countries, countryName])
+        setCountryName('')
 
     }
     return (
-        <View>
+        <ScrollView>
+            <Text style={{fontSize:45, fontWeight:'bold'}}>{countries.length}</Text>
             <TextInput
                 style={{
                     height: 40,
@@ -43,7 +45,7 @@ const ArrayStateSample = () => {
                 })
             }
             <Button title='Remove All' onPress={() => setCountries([])}></Button>
-        </View>
+        </ScrollView>
     )
 }
 
