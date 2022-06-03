@@ -2,4 +2,5 @@
 * bigdata list sample
 * use effect render timing events
 * animasyon kütüphaneleri
+* device kütüphanesi (şarj durumu vb.)
 
