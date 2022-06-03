@@ -3,4 +3,5 @@
 * use effect render timing events
 * animasyon kütüphaneleri
 * device kütüphanesi (şarj durumu vb.)
+* base service ( error handling, entity services )
 

@@ -16,10 +16,26 @@ export const baseService = {
 
     },
 
-    getById: () => {
+    getById: async (url, id) => {
+
+        let responseData = {};
+        await axios.get(BASE_URL + url + "/" + id)
+            .then(res => {
+                responseData = res.data;
+            })
+            .catch((err) => console.log("ERROR", err));
+
+        return responseData;
 
     },
-    delete: () => {
+    delete: async (url, id) => {
+
+        let responseData = {};
+        await axios.delete(BASE_URL + url + "/" + id)
+            .then(res => {
+                responseData = res.data;
+            })
+            .catch((err) => console.log("ERROR", err))
 
     },
     add: () => {
