@@ -4,12 +4,14 @@
 import {SafeAreaView } from 'react-native'
 import React from 'react'
 import AddProduct from './src/fetchSample/AddProduct'
+import ProductList from './src/fetchSample/ProductList'
+import AddSupplier from './src/formikSample/AddSupplier'
 
 const App = () => {
   
   return (<>
     <SafeAreaView style={{flex:1}}>
-      <AddProduct></AddProduct>
+      <AddSupplier></AddSupplier>
     </SafeAreaView>
   
   </>

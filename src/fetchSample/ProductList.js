@@ -1,4 +1,4 @@
-import { View, Text, FlatList } from 'react-native'
+import { View, Text, FlatList, Button } from 'react-native'
 import React, { useState, useEffect } from 'react'
 
 const ProductList = () => {
@@ -9,6 +9,12 @@ const ProductList = () => {
 
     useEffect(() => {
 
+        getProducts();
+
+    }, []);
+
+    const getProducts = () => {
+
         //1. then bloğu gelen response üzernden body i alıp onu js objesine parse etmemi sağlar.
         //2. then bloğu ise datayı almamı sağlar.
         fetch("https://northwind.vercel.app/api/products")
@@ -17,10 +23,27 @@ const ProductList = () => {
                 setProducts(data)
             })
 
-    }, [])
+    }
 
-    const renderItem = ({item}) => {
-        return <Text>{item.name}</Text>
+    const deleteItem = (id) => {
+
+        let requestOptions = {
+            method: 'DELETE'
+        }
+
+        fetch("https://northwind.vercel.app/api/products/" + id, requestOptions)
+            .then(res => res.json())
+            .then(() => {
+                getProducts();
+            })
+
+    }
+
+    const renderItem = ({ item }) => {
+        return <>
+            <Text>{item.name}</Text>
+            <Button title='Delete' onPress={() => deleteItem(item.id)}></Button>
+        </>
     }
 
     return (

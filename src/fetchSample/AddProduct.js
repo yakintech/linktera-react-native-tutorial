@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 const AddProduct = () => {
 
     const [name, setName] = useState('');
-    const [price, setPrice] = useState(0);
+    const [price, setPrice] = useState('');
 
 
     const addNewProduct = () => {
@@ -36,7 +36,6 @@ const AddProduct = () => {
             .catch(err => {
                 console.log('Error', err);
             })
-
 
     }
 

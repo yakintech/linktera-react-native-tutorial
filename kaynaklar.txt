@@ -7,3 +7,12 @@ https://medium.com/batech/react-native-performans-i%CC%87pu%C3%A7lar%C4%B1-1-4c3
 Flex Yapısı
 https://reactnative.dev/docs/flexbox
 https://www.youtube.com/watch?v=OaEtW_CSaPk
+
+Form kütüphaneleri
+https://react-hook-form.com/
+https://formik.org/docs/guides/react-native
+
+React Native Formik Validation
+https://blog.logrocket.com/react-native-form-validations-with-formik-and-yup/#:~:text=Formik%20is%20a%20simple%20React,debug%2C%20and%20test%20your%20forms.
+
+
