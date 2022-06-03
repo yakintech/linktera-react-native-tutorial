@@ -3,10 +3,9 @@
 
 import { SafeAreaView } from 'react-native'
 import React from 'react'
-import AddProduct from './src/fetchSample/AddProduct'
-import ProductList from './src/fetchSample/ProductList'
-import AddSupplier from './src/formikSample/AddSupplier'
 import AddCategory from './src/hookFormSample/AddCategory'
+import { NavigationContainer } from '@react-navigation/native';
+
 
 const App = () => {
 
