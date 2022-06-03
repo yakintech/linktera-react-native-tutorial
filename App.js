@@ -3,18 +3,13 @@
 
 import {SafeAreaView } from 'react-native'
 import React from 'react'
-import PropSample from './src/stateSample/PropSample'
-import ProductBox from './src/stateSample/ProductBox'
-import TodoScreen from './src/stateSample/TodoScreen'
-import ArrayStateSample from './src/stateSample/ArrayStateSample'
-import ProductList from './src/flatListSample/ProductList'
-import FlexSample from './src/flexSample/FlexSample'
+import AddProduct from './src/fetchSample/AddProduct'
 
 const App = () => {
   
   return (<>
     <SafeAreaView style={{flex:1}}>
-     <FlexSample></FlexSample>
+      <AddProduct></AddProduct>
     </SafeAreaView>
   
   </>
