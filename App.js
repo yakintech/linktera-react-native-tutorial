@@ -3,16 +3,20 @@ import React from 'react'
 
 import { NavigationContainer } from '@react-navigation/native';
 import Tab from './src/linkteraECommerce/navigation/tab/'
+import { CartProvider } from './src/linkteraECommerce/store/context/CartContext';
 
 
 const App = () => {
 
 
   return (<>
-    <NavigationContainer>
-      {/* <Drawer></Drawer> */}
-      <Tab></Tab>
-    </NavigationContainer>
+    <CartProvider>
+      <NavigationContainer>
+        {/* <Drawer></Drawer> */}
+        <Tab></Tab>
+      </NavigationContainer>
+    </CartProvider>
+
 
   </>
 

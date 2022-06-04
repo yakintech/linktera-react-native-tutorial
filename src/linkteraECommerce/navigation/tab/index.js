@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeStack from '../stack/HomeStack';
 import ProductStack from '../stack/ProductStack';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import CartStack from '../stack/CartStack';
+import { cartContext } from '../../store/context/CartContext';
 const index = () => {
 
 
     const Tab = createBottomTabNavigator();
+
+    const { cart } = useContext(cartContext)
 
     return (
         <Tab.Navigator>
@@ -36,7 +39,7 @@ const index = () => {
                 component={CartStack}
                 options={{
                     headerShown: false,
-                    tabBarBadge:0,
+                    tabBarBadge: cart.length,
                     tabBarIcon: ({ color }) => (
                         <Ionicons name="cart-outline" size={26} />
                     ),

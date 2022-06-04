@@ -8,8 +8,6 @@ import { NavigationContainer } from '@react-navigation/native';
 
 const ProductStack = () => {
 
-    console.log('PRODUCT STACK');
-
     const Stack = createNativeStackNavigator();
 
     return (<>
