@@ -2,7 +2,7 @@
 import React from 'react'
 
 import { NavigationContainer } from '@react-navigation/native';
-import Tab from './src/linkteraECommerce/navigation/tab'
+import Tab from './src/linkteraECommerce/navigation/tab/'
 
 
 const App = () => {
@@ -10,6 +10,7 @@ const App = () => {
 
   return (<>
     <NavigationContainer>
+      {/* <Drawer></Drawer> */}
       <Tab></Tab>
     </NavigationContainer>
 

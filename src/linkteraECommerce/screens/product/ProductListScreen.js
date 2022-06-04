@@ -31,7 +31,8 @@ const ProductListScreen = ({ navigation }) => {
     }
 
     return (<>
-        <Text>Products Count: {products.length}</Text>
+       
+        {/* <Text>Products Count: {products.length}</Text> */}
         <ProductList products={products} deleteProduct={deleteProduct} goToDetail={goToDetail}></ProductList>
     </>
     )

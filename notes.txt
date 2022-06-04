@@ -4,4 +4,5 @@
 * animasyon kütüphaneleri
 * device kütüphanesi (şarj durumu vb.)
 * base service ( error handling, entity services )
+* xcode cihaz üzerinden çalıştırma
 

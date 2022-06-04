@@ -16,3 +16,18 @@ React Native Formik Validation
 https://blog.logrocket.com/react-native-form-validations-with-formik-and-yup/#:~:text=Formik%20is%20a%20simple%20React,debug%2C%20and%20test%20your%20forms.
 
 
+
+React Native UI Libraries
+https://reactnativeelements.com/
+https://nativebase.io/
+
+Ikon Yükleme Adımları ( IOS )
+https://github.com/oblador/react-native-vector-icons
+
+1) Yukarıdaki paket yüklenir.
+2) Xcode üzerinden proje açılacak (workspace) ve new group denilerek bir Fonts klasörü oluşturulacak.
+3) React Native projesindeki Font lar oraya taşınacak (react-native-vector-icons)
+4) XCode üzerine eklediğimiz fontları info.plist e tanıtıyoruz
+( pod install yapmayı unutmayalım )
+* ionicons ve MaterialCommunityIcons kullanabiliriz.
+
