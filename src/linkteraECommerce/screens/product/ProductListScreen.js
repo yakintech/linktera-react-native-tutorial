@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { ActivityIndicator, View, TextInput } from 'react-native'
 import React, { useContext, useEffect, useState } from 'react'
 import ProductList from '../../components/shared/screens/product/ProductList'
 import { baseService } from '../../api/baseService'
@@ -8,8 +8,11 @@ import { cartContext } from '../../store/context/CartContext'
 const ProductListScreen = ({ navigation }) => {
 
     const [products, setProducts] = useState([]);
-
     const { cart, setCart } = useContext(cartContext);
+    const [orderDesc, setOrderDesc] = useState(true)
+    const [loading, setLoading] = useState(true);
+    const [searchName, setSearchName] = useState('');
+    const [productList, setProductList] = useState([]);
 
     useEffect(() => {
         getData();
@@ -19,6 +22,8 @@ const ProductListScreen = ({ navigation }) => {
         baseService.getAll("/products")
             .then(data => {
                 setProducts(data);
+                setProductList(data)
+                setLoading(false);
             })
     }
 
@@ -60,11 +65,57 @@ const ProductListScreen = ({ navigation }) => {
 
     }
 
-    return (<>
 
-        {/* <Text>Products Count: {products.length}</Text> */}
-        <ProductList products={products} deleteProduct={deleteProduct} goToDetail={goToDetail} addToCart={addToCart}></ProductList>
-    </>
+    const orderByName = () => {
+
+        setLoading(true);
+        let newProducts = []
+        if (orderDesc) {
+            newProducts = products.sort((a, b) => a.name.localeCompare(b.name));
+            setOrderDesc(false);
+        }
+        else {
+            newProducts = products.sort((a, b) => b.name.localeCompare(a.name));
+            setOrderDesc(true);
+        }
+
+        setProducts([...newProducts])
+        setLoading(false);
+
+    }
+
+    const search = (name) => {
+          setSearchName(name)
+
+         let newProducts = productList.filter(q => q.name.includes(name));
+
+         setProducts(newProducts)
+
+    }
+
+    return (<View style={{ flex: 1, justifyContent: 'center' }}>
+        {
+            loading ? <ActivityIndicator size="large" animating={loading} /> : <>
+                <TextInput
+
+                    style={{
+                        height: 40,
+                        margin: 12,
+                        borderWidth: 1,
+                        padding: 10,
+                      }}
+                    onChangeText={(e) => search(e)}
+                    value={searchName}
+                    placeholder="Searh by name..."
+                    
+                />
+                <ProductList products={products} deleteProduct={deleteProduct} goToDetail={goToDetail} addToCart={addToCart} orderByName={orderByName}></ProductList>
+            </>
+        }
+
+
+
+    </View>
     )
 }
 

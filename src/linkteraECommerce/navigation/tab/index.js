@@ -5,12 +5,15 @@ import ProductStack from '../stack/ProductStack';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import CartStack from '../stack/CartStack';
 import { cartContext } from '../../store/context/CartContext';
+import ToDoStack from '../stack/ToDoStack';
+import { useSelector } from 'react-redux';
 const index = () => {
-
+    
 
     const Tab = createBottomTabNavigator();
 
-    const { cart } = useContext(cartContext)
+    const { cart } = useContext(cartContext);
+    const state = useSelector(state => state);
 
     return (
         <Tab.Navigator>
@@ -44,6 +47,19 @@ const index = () => {
                         <Ionicons name="cart-outline" size={26} />
                     ),
                 }} />
+
+            <Tab.Screen
+                name="ToDo"
+                component={ToDoStack}
+                options={{
+                    headerShown: false,
+                    tabBarBadge: state.length,
+                    tabBarIcon: ({ color }) => (
+                        <Ionicons name="list-outline" size={26} />
+                    ),
+                }} />
+
+                
         </Tab.Navigator>
     )
 }

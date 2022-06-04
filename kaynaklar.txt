@@ -31,3 +31,12 @@ https://github.com/oblador/react-native-vector-icons
 ( pod install yapmayı unutmayalım )
 * ionicons ve MaterialCommunityIcons kullanabiliriz.
 
+
+REDUX
+https://www.youtube.com/watch?v=kwGIgfbYWrQ
+https://redux.js.org/
+https://react-redux.js.org/
+
+
+
+
