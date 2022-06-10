@@ -11,6 +11,9 @@ export const baseService = {
             .then(res => {
                 responseData = res.data
             })
+            .catch(err => {
+                throw err
+            })
 
         return responseData
 

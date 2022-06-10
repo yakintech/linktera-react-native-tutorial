@@ -6,6 +6,8 @@ import { setCartStorage } from '../../utils/helpers/AsycnStorageHelper'
 
 const CartScreen = () => {
 
+
+
     const { cart, setCart } = useContext(cartContext);
 
 
@@ -69,5 +71,7 @@ const CartScreen = () => {
         </>
     )
 }
+
+
 
 export default CartScreen

@@ -4,6 +4,7 @@ import ProductList from '../../components/shared/screens/product/ProductList'
 import { baseService } from '../../api/baseService'
 import { cartContext } from '../../store/context/CartContext'
 import { setCartStorage } from '../../utils/helpers/AsycnStorageHelper'
+import { productRequest } from '../../api/productRequest'
 
 
 const ProductListScreen = ({ navigation }) => {
@@ -20,11 +21,20 @@ const ProductListScreen = ({ navigation }) => {
     }, []);
 
     const getData = () => {
-        baseService.getAll("/products")
+        // baseService.getAll("/products")
+        //     .then(data => {
+        //         setProducts(data);
+        //         setProductList(data)
+        //         setLoading(false);
+        //     })
+
+        productRequest.getAllProducts()
             .then(data => {
+
                 setProducts(data);
-                setProductList(data)
+                setProductList(data);
                 setLoading(false);
+
             })
     }
 
@@ -46,7 +56,7 @@ const ProductListScreen = ({ navigation }) => {
         //JS => filter, find
         //Sepete ürün eklediğinde bunu storage a da bildiriyorum.
 
-        
+
 
         var cartProduct = cart.find(q => q.id == item.id);
 
@@ -91,11 +101,11 @@ const ProductListScreen = ({ navigation }) => {
     }
 
     const search = (name) => {
-          setSearchName(name)
+        setSearchName(name)
 
-         let newProducts = productList.filter(q => q.name.includes(name));
+        let newProducts = productList.filter(q => q.name.includes(name));
 
-         setProducts(newProducts)
+        setProducts(newProducts)
 
     }
 
@@ -109,11 +119,11 @@ const ProductListScreen = ({ navigation }) => {
                         margin: 12,
                         borderWidth: 1,
                         padding: 10,
-                      }}
+                    }}
                     onChangeText={(e) => search(e)}
                     value={searchName}
                     placeholder="Searh by name..."
-                    
+
                 />
                 <ProductList products={products} deleteProduct={deleteProduct} goToDetail={goToDetail} addToCart={addToCart} orderByName={orderByName}></ProductList>
             </>

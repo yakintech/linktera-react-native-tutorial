@@ -2,13 +2,9 @@
 * bigdata list sample
 * use effect render timing events
 * animasyon kütüphaneleri
-* device kütüphanesi (şarj durumu vb.) ve diğer kamera, titreşim vb.
-* base service ( error handling, entity services )
 * context api reducer
-* Storage
 * makale paylaşılacak
-* assets (splash screen)
-* cihaz seçme IOS
+* thunk
 
 
 

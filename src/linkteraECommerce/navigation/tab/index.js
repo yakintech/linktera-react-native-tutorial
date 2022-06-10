@@ -35,6 +35,7 @@ const index = () => {
                 name="Home"
                 component={HomeStack}
                 options={{
+                    headerShown: false,
                     tabBarLabel: 'Home',
                     tabBarIcon: ({ color }) => (
                         <Ionicons name="home-outline" size={26} />
