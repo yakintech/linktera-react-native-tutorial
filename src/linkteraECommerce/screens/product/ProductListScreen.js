@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import ProductList from '../../components/shared/screens/product/ProductList'
 import { baseService } from '../../api/baseService'
 import { cartContext } from '../../store/context/CartContext'
+import { setCartStorage } from '../../utils/helpers/AsycnStorageHelper'
 
 
 const ProductListScreen = ({ navigation }) => {
@@ -43,6 +44,9 @@ const ProductListScreen = ({ navigation }) => {
     const addToCart = (item) => {
         //Eğer bu item sepette yoksa yeni bir ürün sepete eklenir
         //JS => filter, find
+        //Sepete ürün eklediğinde bunu storage a da bildiriyorum.
+
+        
 
         var cartProduct = cart.find(q => q.id == item.id);
 
@@ -50,6 +54,7 @@ const ProductListScreen = ({ navigation }) => {
 
             cartProduct.quantity = cartProduct.quantity + 1;
             setCart([...cart]);
+            setCartStorage([...cart])
 
         } else {
             //Sepette varsa mevcut ürünün fiyatı bir arttırılır
@@ -61,6 +66,7 @@ const ProductListScreen = ({ navigation }) => {
             }
             //sprean keyworduyle sepetime yeni ürünü ekledim.
             setCart([...cart, newCartProduct])
+            setCartStorage([...cart, newCartProduct])
         }
 
     }

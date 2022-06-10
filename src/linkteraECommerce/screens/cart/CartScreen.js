@@ -2,6 +2,7 @@ import { Text, FlatList } from 'react-native'
 import React, { useContext } from 'react'
 import { cartContext } from '../../store/context/CartContext'
 import { Button, Card } from '@rneui/base'
+import { setCartStorage } from '../../utils/helpers/AsycnStorageHelper'
 
 const CartScreen = () => {
 
@@ -21,6 +22,15 @@ const CartScreen = () => {
         var newCartProducts = cart.filter(q => q.id != id);
 
         setCart(newCartProducts)
+        setCartStorage(newCartProducts)
+    }
+
+
+    const emptyCart = () => {
+
+        setCart([]);
+        setCartStorage([]);
+
     }
 
     const renderItem = ({ item }) => {
@@ -52,10 +62,10 @@ const CartScreen = () => {
 
             </FlatList>
             {
-                cart.length > 0 ?  <Button color="error" onPress={() => setCart([])}  >Empty Cart</Button> : <></>
+                cart.length > 0 ? <Button color="error" onPress={() => emptyCart()}  >Empty Cart</Button> : <></>
             }
-           
-            
+
+
         </>
     )
 }

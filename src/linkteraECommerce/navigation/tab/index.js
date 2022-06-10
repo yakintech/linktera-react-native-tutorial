@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContex, useContext, useEffect } from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeStack from '../stack/HomeStack';
 import ProductStack from '../stack/ProductStack';
@@ -7,13 +7,27 @@ import CartStack from '../stack/CartStack';
 import { cartContext } from '../../store/context/CartContext';
 import ToDoStack from '../stack/ToDoStack';
 import { useSelector } from 'react-redux';
+import { getCartStorage } from '../../utils/helpers/AsycnStorageHelper';
 const index = () => {
-    
+
 
     const Tab = createBottomTabNavigator();
 
-    const { cart } = useContext(cartContext);
+    const { cart, setCart } = useContext(cartContext);
     const state = useSelector(state => state);
+
+    useEffect(() => {
+
+        getCartStorage()
+            .then((data) => {
+                console.log('STORAGE DATA', data);
+                if (data) {
+                    setCart(data);
+                }
+            })
+
+    }, [])
+
 
     return (
         <Tab.Navigator>
@@ -59,7 +73,7 @@ const index = () => {
                     ),
                 }} />
 
-                
+
         </Tab.Navigator>
     )
 }
