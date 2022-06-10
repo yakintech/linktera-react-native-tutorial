@@ -1,10 +1,6 @@
-* apk çıkartma
+
 * bigdata list sample
 * use effect render timing events
-* animasyon kütüphaneleri
-* context api reducer
-* makale paylaşılacak
-* thunk
 
 
 

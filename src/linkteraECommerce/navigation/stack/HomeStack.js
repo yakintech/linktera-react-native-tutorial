@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import TimingScreen from '../../screens/home/TimingScreen';
 import GrandComp from '../../screens/home/GrandComp';
 import LottieSample from '../../screens/home/LottieSample';
+import BigListSample from '../../screens/home/BigListSample';
 
 
 const Stack = createNativeStackNavigator();
@@ -16,12 +17,21 @@ const HomeStack = () => {
 
         <Stack.Navigator>
 
+
+        <Stack.Screen
+                name="BigList"
+                component={BigListSample}
+                options={{
+                    headerTitle: 'Big List'
+                }} />
+
         <Stack.Screen
                 name="Lottie"
                 component={LottieSample}
                 options={{
                     headerTitle: 'Lottie'
                 }} />
+
 
         <Stack.Screen
                 name="Grand"

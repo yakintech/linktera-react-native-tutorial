@@ -7,7 +7,6 @@ import { Button } from '@rneui/base';
 const LottieSample = () => {
 
     var lottieRef = useRef();
-    var textRef = useRef();
 
 
     const playAnimation = () => {

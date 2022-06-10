@@ -16,6 +16,7 @@ const index = () => {
     const { cart, setCart } = useContext(cartContext);
     const state = useSelector(state => state);
 
+
     useEffect(() => {
 
         getCartStorage()

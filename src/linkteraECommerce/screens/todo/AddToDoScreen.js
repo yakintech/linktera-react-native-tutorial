@@ -2,6 +2,7 @@ import { View, TextInput } from 'react-native'
 import React, { useReducer, useState } from 'react'
 import { Button } from '@rneui/base'
 import { useDispatch } from 'react-redux';
+import { addDataToService, addToDoAction } from '../../store/actions/todo.actions';
 
 const AddToDoScreen = ({navigation}) => {
 
@@ -15,12 +16,12 @@ const AddToDoScreen = ({navigation}) => {
 
     let newTodoEntity = {
       id: randomId,
-      name: name,
+      title: name,
       completed: false
     }
 
-  
-    dispath({ type: "ADD_TODO", payload: newTodoEntity })
+    
+    dispath(addDataToService(newTodoEntity))
 
     setName('')
 

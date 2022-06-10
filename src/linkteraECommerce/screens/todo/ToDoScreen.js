@@ -12,11 +12,16 @@ const ToDoScreen = () => {
 
   var dispatch = useDispatch();
 
+
+
+
+  const getAll = () => {
+    var list = dispatch({type:'GET_ALL_TODOS'});
+  }
+
   const removeToDo = (item) => {
-
-
-    dispatch({ type: 'REMOVE_TODO', payload: item })
-    //dispatch(() => removeToDoAction(item))
+    //dispatch({ type: 'REMOVE_TODO', payload: item })
+     dispatch(removeToDoAction(item))
   }
 
   const removeAll = () => {
@@ -26,7 +31,7 @@ const ToDoScreen = () => {
 
   const render = ({ item }) => {
     return <Card>
-      <Card.Title>Id: {item.id} ToDo: {item.name}</Card.Title>
+      <Card.Title>Id: {item.id} ToDo: {item.title}</Card.Title>
       <Card.Divider />
 
       <Button color="error" onPress={() => removeToDo(item)} type="outline" >Remove ToDo</Button>
@@ -36,6 +41,7 @@ const ToDoScreen = () => {
 
   return (
     <View>
+      <Button onPress={() => getAll()}>Get</Button>
       <Button onPress={() => removeAll()}>Remove All Todos</Button>
       <FlatList
         data={todos}
