@@ -4,6 +4,7 @@ import HomeScreen from './../../screens/home'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import TimingScreen from '../../screens/home/TimingScreen';
 import GrandComp from '../../screens/home/GrandComp';
+import LottieSample from '../../screens/home/LottieSample';
 
 
 const Stack = createNativeStackNavigator();
@@ -14,6 +15,13 @@ const HomeStack = () => {
     return (<>
 
         <Stack.Navigator>
+
+        <Stack.Screen
+                name="Lottie"
+                component={LottieSample}
+                options={{
+                    headerTitle: 'Lottie'
+                }} />
 
         <Stack.Screen
                 name="Grand"

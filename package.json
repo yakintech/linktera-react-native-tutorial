@@ -19,6 +19,8 @@
     "@rneui/themed": "^4.0.0-rc.4",
     "axios": "^0.27.2",
     "formik": "^2.2.9",
+    "lottie-ios": "^3.2.3",
+    "lottie-react-native": "^5.1.3",
     "react": "17.0.2",
     "react-hook-form": "^7.31.3",
     "react-native": "0.68.2",
